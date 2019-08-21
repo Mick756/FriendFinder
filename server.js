@@ -12,10 +12,17 @@ app.get("/survey", function(req, res) {
     res.sendFile(path.join(__dirname, "app", "public", "survey.html"));
 });
 
+app.get("/style.css", function(req, res) {
+    res.sendFile(path.join(__dirname, "app", "public", "style.css"));
+});
+
 app.get("/*", function(req, res) {
     res.sendFile(path.join(__dirname, "app", "public", "home.html"));
 });
 
+
+
 app.listen(PORT, function() {
+    console.log("Server has started.");
     console.log("App listening on PORT " + PORT);
 });
